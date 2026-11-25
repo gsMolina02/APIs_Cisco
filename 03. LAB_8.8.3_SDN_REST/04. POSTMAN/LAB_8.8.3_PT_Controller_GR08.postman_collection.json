@@ -1,0 +1,100 @@
+{
+	"info": {
+		"name": "LAB 8.8.3 - API REST PT-Controller0 (GR08)",
+		"description": "API northbound del controlador SDN de Packet Tracer (Grupo 08: Stiven Molina, Daniela Tituaña).\n\nRequisitos: actividad abierta, External Network Access habilitado en Preferences y Access Enabled en PT-Controller0 > Config > Controller (puerto 58000).\n\nOrden: 0 (debe fallar sin ticket) -> 1 (guarda el ticket en {{ticket}}) -> 2 y 3.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"variable": [
+		{ "key": "base_url", "value": "http://localhost:58000/api/v1" },
+		{ "key": "usuario", "value": "cisco" },
+		{ "key": "clave", "value": "cisco123!" },
+		{ "key": "ticket", "value": "" }
+	],
+	"item": [
+		{
+			"name": "0. GET host sin ticket (Parte 2)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test('Sin ticket la API rechaza la consulta', () => pm.expect(pm.response.code).to.not.equal(200));"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": { "raw": "{{base_url}}/host", "host": ["{{base_url}}"], "path": ["host"] },
+				"description": "Sin X-Auth-Token el controlador responde: Ticket-based authorization: empty ticket."
+			}
+		},
+		{
+			"name": "1. POST ticket (Parte 3)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test('Ticket creado (201)', () => pm.response.to.have.status(201));",
+							"const ticket = pm.response.json().response.serviceTicket;",
+							"pm.collectionVariables.set('ticket', ticket);",
+							"console.log('serviceTicket guardado en la variable ticket');"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [{ "key": "Content-Type", "value": "application/json" }],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"{{usuario}}\",\n    \"password\": \"{{clave}}\"\n}"
+				},
+				"url": { "raw": "{{base_url}}/ticket", "host": ["{{base_url}}"], "path": ["ticket"] }
+			}
+		},
+		{
+			"name": "2. GET network-device (Parte 4)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test('Lista de dispositivos (200)', () => pm.response.to.have.status(200));",
+							"pm.test('Trae al menos un dispositivo', () => pm.expect(pm.response.json().response.length).to.be.above(0));"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [{ "key": "X-Auth-Token", "value": "{{ticket}}" }],
+				"url": { "raw": "{{base_url}}/network-device", "host": ["{{base_url}}"], "path": ["network-device"] }
+			}
+		},
+		{
+			"name": "3. GET host (Parte 4)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test('Lista de hosts (200)', () => pm.response.to.have.status(200));"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [{ "key": "X-Auth-Token", "value": "{{ticket}}" }],
+				"url": { "raw": "{{base_url}}/host", "host": ["{{base_url}}"], "path": ["host"] }
+			}
+		}
+	]
+}

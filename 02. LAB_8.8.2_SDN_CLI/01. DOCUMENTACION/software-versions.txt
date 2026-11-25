@@ -1,0 +1,23 @@
+Laboratorio 8.8.2 - Versiones de software (show version | include RELEASE)
+Grupo 08 - Stiven Molina, Daniela Tituaña
+
+Instrucciones: conéctese por SSH a cada equipo desde el PC de administración, ejecute
+"show version | include RELEASE" y pegue la salida debajo de su nombre (con su IP).
+
+== SWR1 (IP: ) ==
+
+== SWR2 (IP: ) ==
+
+== SWR3 (IP: ) ==
+
+== SWR4 (IP: ) ==
+
+== SWL1 (IP: ) ==
+
+== SWL2 (IP: ) ==
+
+== R1 (IP: ) ==
+
+== R2 (IP: ) ==
+
+== R3 (IP: ) ==

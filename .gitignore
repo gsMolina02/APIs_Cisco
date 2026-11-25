@@ -1,0 +1,21 @@
+# Datos personales de cada integrante (token de Webex, IDs, correos)
+config.json
+.env
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Respaldos automáticos de Packet Tracer y archivos temporales de Office
+*.pkt.bak
+*.pka.bak
+~$*.docx
+
+# Sistema operativo y editores
+Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/
+.idea/

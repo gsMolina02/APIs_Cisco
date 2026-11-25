@@ -1,0 +1,7 @@
+{
+    "access_token": "<pegue_aqui_su_token_personal_de_developer.webex.com>",
+    "person_email": "<correo_webex_de_Stiven>",
+    "room_title": "DevNet Associate Training GR08",
+    "room_id": "<se_llena_solo_al_ejecutar_create-rooms.py>",
+    "message": "Hola **DevNet Associates** desde el **Grupo 08** (Stiven y Daniela)!!"
+}
