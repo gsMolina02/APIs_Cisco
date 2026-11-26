@@ -12,6 +12,7 @@ venv/
 *.pkt.bak
 *.pka.bak
 ~$*.docx
+.~lock.*#
 
 # Sistema operativo y editores
 Thumbs.db

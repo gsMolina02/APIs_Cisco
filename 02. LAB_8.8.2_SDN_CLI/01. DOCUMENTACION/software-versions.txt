@@ -4,20 +4,49 @@ Grupo 08 - Stiven Molina, Daniela Tituaña
 Instrucciones: conéctese por SSH a cada equipo desde el PC de administración, ejecute
 "show version | include RELEASE" y pegue la salida debajo de su nombre (con su IP).
 
-== SWR1 (IP: ) ==
+== SWR1 (IP: 10.0.1.2) ==
+SWR1#show version | include RELEASE
+Cisco IOS Software [Denali], Catalyst L3 Switch Software (CAT3K_CAA-UNIVERSALK9-M), Version 16.3.2, RELEASE SOFTWARE (fc4)
+BOOTLDR: CAT3K_CAA Boot Loader (CAT3K_CAA-HBOOT-M) Version 4.26, RELEASE SOFTWARE (P)
 
-== SWR2 (IP: ) ==
+== SWR2 (IP: 10.0.1.3) ==
+SWR2#show version | include RELEASE
+Cisco IOS Software [Denali], Catalyst L3 Switch Software (CAT3K_CAA-UNIVERSALK9-M), Version 16.3.2, RELEASE SOFTWARE (fc4)
+BOOTLDR: CAT3K_CAA Boot Loader (CAT3K_CAA-HBOOT-M) Version 4.26, RELEASE SOFTWARE (P)
 
-== SWR3 (IP: ) ==
+== SWR3 (IP: 10.0.1.4) ==
+SWR3#show version | include RELEASE
+Cisco IOS Software [Denali], Catalyst L3 Switch Software (CAT3K_CAA-UNIVERSALK9-M), Version 16.3.2, RELEASE SOFTWARE (fc4)
+BOOTLDR: CAT3K_CAA Boot Loader (CAT3K_CAA-HBOOT-M) Version 4.26, RELEASE SOFTWARE (P)
 
-== SWR4 (IP: ) ==
+== SWR4 (IP: 10.0.1.5) ==
+SWR4#show version | include RELEASE
+Cisco IOS Software [Denali], Catalyst L3 Switch Software (CAT3K_CAA-UNIVERSALK9-M), Version 16.3.2, RELEASE SOFTWARE (fc4)
+BOOTLDR: CAT3K_CAA Boot Loader (CAT3K_CAA-HBOOT-M) Version 4.26, RELEASE SOFTWARE (P)
 
-== SWL1 (IP: ) ==
+== SWL1 (IP: 192.168.101.2) ==
+SWL1#show version | include RELEASE
+Cisco IOS Software [Denali], Catalyst L3 Switch Software (CAT3K_CAA-UNIVERSALK9-M), Version 16.3.2, RELEASE SOFTWARE (fc4)
+BOOTLDR: CAT3K_CAA Boot Loader (CAT3K_CAA-HBOOT-M) Version 4.26, RELEASE SOFTWARE (P)
 
-== SWL2 (IP: ) ==
+== SWL2 (IP: 192.168.102.2) ==
+SWL2#show version | include RELEASE
+Cisco IOS Software [Denali], Catalyst L3 Switch Software (CAT3K_CAA-UNIVERSALK9-M), Version 16.3.2, RELEASE SOFTWARE (fc4)
+BOOTLDR: CAT3K_CAA Boot Loader (CAT3K_CAA-HBOOT-M) Version 4.26, RELEASE SOFTWARE (P)
 
-== R1 (IP: ) ==
+== R1 (IP: 192.168.101.1) ==
+R1#show version | include RELEASE
+Cisco IOS Software, ISR Software (X86_64_LINUX_IOSD-UNIVERSALK9-M), Version Version 15.5(3)S5, RELEASE SOFTWARE (fc2)
 
-== R2 (IP: ) ==
+== R2 (IP: 192.168.102.1) ==
+R2#show version | include RELEASE
+Cisco IOS Software, ISR Software (X86_64_LINUX_IOSD-UNIVERSALK9-M), Version Version 15.5(3)S5, RELEASE SOFTWARE (fc2)
 
-== R3 (IP: ) ==
+== R3 (IP: 10.0.1.1) ==
+R3#show version | include RELEASE
+Cisco IOS Software, ISR Software (X86_64_LINUX_IOSD-UNIVERSALK9-M), Version Version 15.5(3)S5, RELEASE SOFTWARE (fc2)
+
+== RESUMEN ==
+Switches Catalyst 3650-24PS (SWR1-SWR4, SWL1, SWL2): IOS-XE 16.3.2 Denali, Boot Loader 4.26
+Routers ISR4331 (R1, R2, R3): IOS XE 15.5(3)S5
+Método: 9 sesiones SSH manuales (usuario cisco) desde el PC Administrador, una por equipo.

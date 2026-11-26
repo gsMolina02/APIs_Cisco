@@ -1,4 +1,4 @@
-# Parte 6 - Pegar en Packet Tracer: PC de administración > Programming > proyecto "REST API" (Python) > main.py > Run.
+# Parte 6 - Pegar en Packet Tracer: PC de administración > Programming > proyecto "API REST" (Empty - Python2) > main.py > Run.
 # Dentro de Packet Tracer se usa la IP del controlador en la topología (sin el puerto 58000 del PC).
 # El intérprete de Packet Tracer no puede importar controlador.py: este archivo es independiente.
 import json
